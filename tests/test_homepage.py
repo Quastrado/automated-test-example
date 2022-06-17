@@ -9,9 +9,7 @@ class TestHomepage:
 
     def test_nav_links(self):
         homepage_nav = HomepageNav(self.driver)
-        actual_links = homepage_nav.get_nav_links_text()
-        expected_links = homepage_nav.NAV_LINK_TEXT
-        assert expected_links == actual_links, 'Validate Nav Links text'
-        homepage_nav.get_nav_link_by_name('Beauty').click()
-        time.sleep(5)
+        for indx in range(12):
+            homepage_nav.get_nav_links()[indx].click()
+
 
